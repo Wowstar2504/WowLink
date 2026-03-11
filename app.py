@@ -93,10 +93,16 @@ def admin():
     cursor = conn.cursor()
 
     if request.method == 'POST':
-        new_log = request.form.get('log_content')
-        if new_log:
-            cursor.execute('INSERT INTO logs (content) VALUES (?)', (new_log,))
+        # Check if they clicked 'Delete All'
+        if 'delete_all' in request.form:
+            cursor.execute('DELETE FROM logs')
             conn.commit()
+        else:
+            # Otherwise, it's a normal log post
+            new_log = request.form.get('log_content')
+            if new_log:
+                cursor.execute('INSERT INTO logs (content) VALUES (?)', (new_log,))
+                conn.commit()
 
     cursor.execute('SELECT * FROM logs ORDER BY id DESC')
     all_logs = cursor.fetchall()
