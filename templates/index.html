@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>WowLink | Home</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <div class="box">
+            <h1>Welcome to WowLink</h1>
+            <nav>
+                <a href="/about">About</a> |
+                <a href="/links">Links</a> |
+                <a href="/login">Admin Login</a>
+            </nav>
+
+            <div style="border: 1px solid #30363d; margin-top: 20px; padding: 10px; background: #0d1117;">
+                <h3 style="color: #238636;">{{ status }}</h3>
+                <p>Current BTC Value: <span style="color: #d29922;">${{ price }}</span></p>
+                <p style="font-size: 0.8em; color: #8b949e;">Fetched from External API (CoinGecko)</p>
+            </div>
+            
+            <p>Welcome to the Wow Ecosystem.</p>
+        </div>
+    </body>
+</html>

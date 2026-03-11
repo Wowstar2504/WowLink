@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>WowLink | Links</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <div class="box">
+            <h1>Wow Network Status</h1>
+            <nav>
+                <a href="/">Home</a> |
+                <a href="/about">About</a> |
+                <a href="/login">Admin Login</a>
+            </nav>
+
+            <ul style="list-style: none; padding: 0; text-align: left; margin-top: 20px;">
+                {% for project in projects %}
+                <li stlye="margin-bottom: 10px; border-bottom: 1px solid #30363d; padding-bottom: 5px;">
+                    <strong>{{ project.name }}</strong>;
+                    <span style="color: {% if project.status == 'Online' %}#238636{% else %}#d29922{% endif %};">
+                        {{ project.status }}
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>

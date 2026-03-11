@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WowLink | Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="box">
+        <h1 style="color: #ff5f57;">WowOS Admin Terminal</h1>
+        <nav><a href="/">Home</a> | <a href="/logout">Logout</a></nav>
+
+        <form actuion="/admin" method="POST" style="margin-top: 20px;">
+            <input type="text" name="log_content" placeholder="Enter System Log..." required>
+            <button type="submit">Post Log</button>
+        </form>
+
+        <hr style="border-color: #30363d; margin: 20px 0;">
+
+        <h3>Recent System Logs</h3>
+        <div style="text-align: left;">
+            {% for log in logs %}
+                <p style="border-left: 3px solid #ff5f57; padding-left: 10px; font-family: monospace;">
+                    > {{ log[1] }}
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

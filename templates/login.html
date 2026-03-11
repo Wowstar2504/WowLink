@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WowLink | Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="box">
+        <h1>WowOS Authentication</h1>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Username (admin)" required><br><br>
+            <input type="password" name="password" placeholder="Password (WowPass123)" required><br><br>
+            <button type="submit">Initialize Login</button>
+        </form>
+        <p><a href="/">Return Home</a></p>
+    </div>
+</body>
+</html>
