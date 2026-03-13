@@ -24,3 +24,31 @@ nav a {
 nav a:hover {
     color: #58a6ff;
 }
+
+.clearlogsbutton {
+    background-color: #ff5f57;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logid {
+    border-left: 3px solid #ff5f57;
+    padding-left: 10px;
+    font-family: monospace;
+}
+
+.home {
+    border: 1px solid #30363d;
+    margin-top: 20px;
+    padding: 10px;
+    background: #0d1117;
+}
+
+.links {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 5px;
+}

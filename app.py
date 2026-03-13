@@ -82,7 +82,7 @@ def login():
             login_user(user)
             return redirect(url_for('admin'))
         else:
-            return "<h1>Login Failed!</h1><p>Check the VS Code terminal for debug info.</p><a href='/login'>Try again</a>"
+            return "<h1>Login Failed!</h1><a href='/login'>Try again</a>"
             
     return render_template('login.html')
 

@@ -3,6 +3,7 @@
 <head>
     <title>WowLink | Admin</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/style.css"> -->
 </head>
 <body>
     <div class="box">
@@ -15,7 +16,7 @@
         </form>
 
         <form action="/admin" method="POST" style="margin-top: 10px;">
-            <button type="submit" name="delete_all" style="background-color: #ff5f57; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+            <button class="clearlogsbutton" id="clearlogsbutton" type="submit" name="delete_all">
             Clear All System Logs
             </button>
         </form>
@@ -25,7 +26,7 @@
         <h3>Recent System Logs</h3>
         <div style="text-align: left;">
             {% for log in logs %}
-                <p style="border-left: 3px solid #ff5f57; padding-left: 10px; font-family: monospace;">
+                <p class="logclass" id="logid">
                     > {{ log[1] }}
                 </p>
             {% endfor %}
